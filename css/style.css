@@ -23,24 +23,37 @@ a, body, div, form, html, img, input, label, p, span {
   }
 
   #ffLogo {
-    position: relative; /* Posicionamiento relativo */
-    top: 0; /* Posición inicial en la parte superior */
+    position: relative;
+    top: 0;
+    will-change: transform;
+    animation: ffLogoWander 14s cubic-bezier(.42, 0, .2, 1) 2s infinite;
   }
 
-  @keyframes rotar {
+  @keyframes ffLogoWander {
     0% {
-      transform: rotate(0deg); /* Rotación inicial en 0 grados */
+      transform: translate(0, 0) rotate(0deg);
     }
-    50% {
-      transform: rotate(360deg); /* Rotación completa en 25% (1 segundo) */
+    12% {
+      transform: translate(28px, -13px) rotate(38deg);
+    }
+    27% {
+      transform: translate(-20px, -28px) rotate(93deg);
+    }
+    43% {
+      transform: translate(-35px, 8px) rotate(161deg);
+    }
+    58% {
+      transform: translate(8px, 30px) rotate(228deg);
+    }
+    74% {
+      transform: translate(38px, 18px) rotate(297deg);
+    }
+    88% {
+      transform: translate(-13px, 25px) rotate(338deg);
     }
     100% {
-      transform: rotate(360deg); /* Mantiene la rotación final durante 3 segundos */
+      transform: translate(0, 0) rotate(360deg);
     }
-  }  
-  
-  #ffLogo {
-    animation: rotar 8s ease-in-out 10; /* Animación se ejecuta una vez */
   }
   
   
