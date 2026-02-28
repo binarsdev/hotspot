@@ -214,6 +214,61 @@ a, body, div, form, html, img, input, label, p, span {
     -webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
     box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
   }
+
+
+  @-webkit-keyframes slideToCenterFromLeft {
+    from {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideToCenterFromLeft {
+    from {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @-webkit-keyframes slideToCenterFromRight {
+    from {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideToCenterFromRight {
+    from {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  form[name=login] input[name=username] {
+    -webkit-animation: slideToCenterFromLeft .45s ease-out both;
+    animation: slideToCenterFromLeft .45s ease-out both;
+  }
+
+  form[name=login] input[name=password] {
+    -webkit-animation: slideToCenterFromRight .45s ease-out both;
+    animation: slideToCenterFromRight .45s ease-out both;
+  }
   
   /* Estilos para un botón con opacidad */
   .bt {
