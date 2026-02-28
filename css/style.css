@@ -26,7 +26,7 @@ a, body, div, form, html, img, input, label, p, span {
     position: relative;
     top: 0;
     will-change: transform;
-    animation: ffLogoWander 12s cubic-bezier(.42, 0, .2, 1) 2s infinite;
+    animation: ffLogoWander 14s cubic-bezier(.42, 0, .2, 1) 2s infinite;
   }
 
   @keyframes ffLogoWander {
@@ -34,22 +34,22 @@ a, body, div, form, html, img, input, label, p, span {
       transform: translate(0, 0) rotate(0deg);
     }
     12% {
-      transform: translate(22px, -10px) rotate(38deg);
+      transform: translate(28px, -13px) rotate(38deg);
     }
     27% {
-      transform: translate(-16px, -22px) rotate(93deg);
+      transform: translate(-20px, -28px) rotate(93deg);
     }
     43% {
-      transform: translate(-28px, 6px) rotate(161deg);
+      transform: translate(-35px, 8px) rotate(161deg);
     }
     58% {
-      transform: translate(6px, 24px) rotate(228deg);
+      transform: translate(8px, 30px) rotate(228deg);
     }
     74% {
-      transform: translate(30px, 14px) rotate(297deg);
+      transform: translate(38px, 18px) rotate(297deg);
     }
     88% {
-      transform: translate(-10px, 20px) rotate(338deg);
+      transform: translate(-13px, 25px) rotate(338deg);
     }
     100% {
       transform: translate(0, 0) rotate(360deg);
