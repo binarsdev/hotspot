@@ -18,6 +18,10 @@ a, body, div, form, html, img, input, label, p, span {
     color: #e2e8f0;
   }
 
+  :root {
+    --login-input-slide-distance: clamp(1rem, 2.5vw, 2rem);
+  }
+
   #ffLogo {
     position: relative; /* Posicionamiento relativo */
     top: 0; /* Posición inicial en la parte superior */
@@ -218,8 +222,8 @@ a, body, div, form, html, img, input, label, p, span {
 
   @-webkit-keyframes slideToCenterFromLeft {
     from {
-      -webkit-transform: translateX(-10px);
-      transform: translateX(-10px);
+      -webkit-transform: translateX(calc(-1 * var(--login-input-slide-distance)));
+      transform: translateX(calc(-1 * var(--login-input-slide-distance)));
     }
     to {
       -webkit-transform: translateX(0);
@@ -229,8 +233,8 @@ a, body, div, form, html, img, input, label, p, span {
 
   @keyframes slideToCenterFromLeft {
     from {
-      -webkit-transform: translateX(-10px);
-      transform: translateX(-10px);
+      -webkit-transform: translateX(calc(-1 * var(--login-input-slide-distance)));
+      transform: translateX(calc(-1 * var(--login-input-slide-distance)));
     }
     to {
       -webkit-transform: translateX(0);
@@ -240,8 +244,8 @@ a, body, div, form, html, img, input, label, p, span {
 
   @-webkit-keyframes slideToCenterFromRight {
     from {
-      -webkit-transform: translateX(10px);
-      transform: translateX(10px);
+      -webkit-transform: translateX(var(--login-input-slide-distance));
+      transform: translateX(var(--login-input-slide-distance));
     }
     to {
       -webkit-transform: translateX(0);
@@ -251,8 +255,8 @@ a, body, div, form, html, img, input, label, p, span {
 
   @keyframes slideToCenterFromRight {
     from {
-      -webkit-transform: translateX(10px);
-      transform: translateX(10px);
+      -webkit-transform: translateX(var(--login-input-slide-distance));
+      transform: translateX(var(--login-input-slide-distance));
     }
     to {
       -webkit-transform: translateX(0);
