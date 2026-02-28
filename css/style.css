@@ -26,7 +26,7 @@ a, body, div, form, html, img, input, label, p, span {
     position: relative;
     top: 0;
     will-change: transform;
-    animation: ffLogoWander 12s cubic-bezier(.42, 0, .2, 1) 3s infinite;
+    animation: ffLogoWander 12s cubic-bezier(.42, 0, .2, 1) 2s infinite;
   }
 
   @keyframes ffLogoWander {
