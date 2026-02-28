@@ -14,7 +14,8 @@ a, body, div, form, html, img, input, label, p, span {
   
   /* Estilos de fondo para el cuerpo (body) utilizando un color sólido */
   body {
-    background: #4a465b;
+    background: linear-gradient(160deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
+    color: #e2e8f0;
   }
 
   #ffLogo {
@@ -41,7 +42,7 @@ a, body, div, form, html, img, input, label, p, span {
   
   /* Estilos para enlaces */
   a {
-    color: #727272;
+    color: #bfdbfe;
   }
   
   /* Estilos para etiquetas (labels) e inputs */
@@ -173,7 +174,7 @@ a, body, div, form, html, img, input, label, p, span {
   
   /* Estilos para información */
   .info {
-    color: #ffffff;
+    color: #f8fafc;
     text-align: center;
     margin-bottom: 30px;
   }
@@ -195,12 +196,12 @@ a, body, div, form, html, img, input, label, p, span {
   input[type=password],
   input[type=text] {
     width: 100%;
-    border: 1px solid background-color: rgba(255, 255, 255, .8);
+    border: 1px solid rgba(255, 255, 255, .45);
     height: 44px;
     padding: 3px 20px 3px 40px;
     margin-bottom: 20px;
     border-radius: 6px;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(248, 250, 252, .92);
     -webkit-transition: -webkit-box-shadow .3s ease-in-out;
     transition: -webkit-box-shadow .3s ease-in-out;
     transition: box-shadow .3s ease-in-out;
@@ -213,15 +214,71 @@ a, body, div, form, html, img, input, label, p, span {
     -webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
     box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
   }
+
+
+  @-webkit-keyframes slideToCenterFromLeft {
+    from {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideToCenterFromLeft {
+    from {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @-webkit-keyframes slideToCenterFromRight {
+    from {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideToCenterFromRight {
+    from {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  form[name=login] input[name=username] {
+    -webkit-animation: slideToCenterFromLeft .45s ease-out both;
+    animation: slideToCenterFromLeft .45s ease-out both;
+  }
+
+  form[name=login] input[name=password] {
+    -webkit-animation: slideToCenterFromRight .45s ease-out both;
+    animation: slideToCenterFromRight .45s ease-out both;
+  }
   
   /* Estilos para un botón con opacidad */
   .bt {
-    opacity: .6;
+    opacity: .85;
+    color: #e2e8f0;
   }
   
   /* Estilos para un botón de tipo submit */
   input[type=submit] {
-    background: #4D6C8E;
+    background: #0f766e;
     color: #fff;
     border: 0;
     cursor: pointer;
@@ -236,7 +293,7 @@ a, body, div, form, html, img, input, label, p, span {
   /* Estilos para un botón de tipo submit cuando está enfocado o se pasa el mouse sobre él */
   input[type=submit]:focus,
   input[type=submit]:hover {
-    background: #4682b4;
+    background: #0d9488;
   }
   
   /* Estilos para tablas */
