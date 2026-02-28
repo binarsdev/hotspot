@@ -14,34 +14,52 @@ a, body, div, form, html, img, input, label, p, span {
   
   /* Estilos de fondo para el cuerpo (body) utilizando un color sólido */
   body {
-    background: #4a465b;
+    background: linear-gradient(160deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
+    color: #e2e8f0;
+  }
+
+  :root {
+    --login-input-slide-distance: clamp(1rem, 2.5vw, 2rem);
   }
 
   #ffLogo {
-    position: relative; /* Posicionamiento relativo */
-    top: 0; /* Posición inicial en la parte superior */
+    position: relative;
+    top: 0;
+    will-change: transform;
+    animation: ffLogoWander 14s cubic-bezier(.42, 0, .2, 1) 2s infinite;
   }
 
-  @keyframes rotar {
+  @keyframes ffLogoWander {
     0% {
-      transform: rotate(0deg); /* Rotación inicial en 0 grados */
+      transform: translate(0, 0) rotate(0deg);
     }
-    50% {
-      transform: rotate(360deg); /* Rotación completa en 25% (1 segundo) */
+    12% {
+      transform: translate(28px, -13px) rotate(38deg);
+    }
+    27% {
+      transform: translate(-20px, -28px) rotate(93deg);
+    }
+    43% {
+      transform: translate(-35px, 8px) rotate(161deg);
+    }
+    58% {
+      transform: translate(8px, 30px) rotate(228deg);
+    }
+    74% {
+      transform: translate(38px, 18px) rotate(297deg);
+    }
+    88% {
+      transform: translate(-13px, 25px) rotate(338deg);
     }
     100% {
-      transform: rotate(360deg); /* Mantiene la rotación final durante 3 segundos */
+      transform: translate(0, 0) rotate(360deg);
     }
-  }  
-  
-  #ffLogo {
-    animation: rotar 8s ease-in-out 10; /* Animación se ejecuta una vez */
   }
   
   
   /* Estilos para enlaces */
   a {
-    color: #727272;
+    color: #bfdbfe;
   }
   
   /* Estilos para etiquetas (labels) e inputs */
@@ -173,7 +191,7 @@ a, body, div, form, html, img, input, label, p, span {
   
   /* Estilos para información */
   .info {
-    color: #ffffff;
+    color: #f8fafc;
     text-align: center;
     margin-bottom: 30px;
   }
@@ -195,12 +213,12 @@ a, body, div, form, html, img, input, label, p, span {
   input[type=password],
   input[type=text] {
     width: 100%;
-    border: 1px solid background-color: rgba(255, 255, 255, .8);
+    border: 1px solid rgba(255, 255, 255, .45);
     height: 44px;
     padding: 3px 20px 3px 40px;
     margin-bottom: 20px;
     border-radius: 6px;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(248, 250, 252, .92);
     -webkit-transition: -webkit-box-shadow .3s ease-in-out;
     transition: -webkit-box-shadow .3s ease-in-out;
     transition: box-shadow .3s ease-in-out;
@@ -213,15 +231,71 @@ a, body, div, form, html, img, input, label, p, span {
     -webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
     box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
   }
+
+
+  @-webkit-keyframes slideToCenterFromLeft {
+    from {
+      -webkit-transform: translateX(calc(-1 * var(--login-input-slide-distance)));
+      transform: translateX(calc(-1 * var(--login-input-slide-distance)));
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideToCenterFromLeft {
+    from {
+      -webkit-transform: translateX(calc(-1 * var(--login-input-slide-distance)));
+      transform: translateX(calc(-1 * var(--login-input-slide-distance)));
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @-webkit-keyframes slideToCenterFromRight {
+    from {
+      -webkit-transform: translateX(var(--login-input-slide-distance));
+      transform: translateX(var(--login-input-slide-distance));
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideToCenterFromRight {
+    from {
+      -webkit-transform: translateX(var(--login-input-slide-distance));
+      transform: translateX(var(--login-input-slide-distance));
+    }
+    to {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  form[name=login] input[name=username] {
+    -webkit-animation: slideToCenterFromLeft .45s ease-out both;
+    animation: slideToCenterFromLeft .45s ease-out both;
+  }
+
+  form[name=login] input[name=password] {
+    -webkit-animation: slideToCenterFromRight .45s ease-out both;
+    animation: slideToCenterFromRight .45s ease-out both;
+  }
   
   /* Estilos para un botón con opacidad */
   .bt {
-    opacity: .6;
+    opacity: .85;
+    color: #e2e8f0;
   }
   
   /* Estilos para un botón de tipo submit */
   input[type=submit] {
-    background: #4D6C8E;
+    background: #0f766e;
     color: #fff;
     border: 0;
     cursor: pointer;
@@ -236,7 +310,7 @@ a, body, div, form, html, img, input, label, p, span {
   /* Estilos para un botón de tipo submit cuando está enfocado o se pasa el mouse sobre él */
   input[type=submit]:focus,
   input[type=submit]:hover {
-    background: #4682b4;
+    background: #0d9488;
   }
   
   /* Estilos para tablas */
